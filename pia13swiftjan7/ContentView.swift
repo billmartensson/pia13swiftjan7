@@ -16,14 +16,14 @@ struct ContentView: View {
     var body: some View {
         if horizontalSizeClass == .regular && verticalSizeClass == .regular {
             HStack {
-                ProductListView(clickedproduct: currentproduct)
+                ProductListView(clickedproduct: $currentproduct)
                     .frame(width: 300)
-                ProductDetailView(productname: currentproduct)
+                ProductDetailView(productname: $currentproduct)
                     .frame(maxWidth: .infinity)
             }
         } else {
             VStack {
-                ProductListView()
+                ProductListView(clickedproduct: $currentproduct)
             }
         }
         
